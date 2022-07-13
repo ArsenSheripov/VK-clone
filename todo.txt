@@ -1,0 +1,9 @@
+ToDo:
+[]-Home
+[]-MyPage
+[]-Message
+[]-Friends
+[]-Posts
+	[]-Add posts
+
+React, Redux, TypeScript, Firebase
