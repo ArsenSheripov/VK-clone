@@ -1,9 +1,16 @@
 ToDo:
+[]-Registration
+[]-Login
+
 []-Home
+	[]-Posts
+		[]-Add posts
+		[]-Comments
+		[]-Likes
 []-MyPage
-[]-Message
+[]-Messages
+	[]-Dialog
 []-Friends
-[]-Posts
-	[]-Add posts
+
 
 React, Redux, TypeScript, Firebase
