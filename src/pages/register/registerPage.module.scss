@@ -1,0 +1,23 @@
+@import '../../App.scss';
+
+.registerPage {
+	max-width: 25rem;
+	margin: 0 auto;
+	margin-top: 5rem;
+	padding: 0.8rem;
+	border-radius: 0.4rem;
+	background-color: #ffffff;
+	text-align: center;
+
+	&__title {
+		font-size: 2.5rem;
+		margin-bottom: 0.5rem;
+	}
+
+	&__login {
+
+		a {
+			color: $gray-blue;
+		}
+	}
+}

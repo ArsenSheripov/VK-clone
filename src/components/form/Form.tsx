@@ -1,4 +1,7 @@
 import React, { FC, useState } from 'react';
+import AppBtn from '../UI/button/AppBtn';
+import AppInput from '../UI/input/AppInput';
+import cl from "./form.module.scss";
 
 interface FormProps {
 	title: string
@@ -9,26 +12,30 @@ const Form: FC<FormProps> = ({ title, handleClick }) => {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 
+	const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+		e.preventDefault()
+	}
+
 	return (
-		<form>
-			<input
+		<form className={cl.form} onSubmit={(e) => handleSubmit(e)}>
+			<AppInput
 				type="text"
 				value={email}
 				onChange={e => setEmail(e.target.value)}
 				placeholder="email"
 			/>
-			<input
+			<AppInput
 				type="password"
 				value={password}
 				onChange={e => setPassword(e.target.value)}
 				placeholder="password"
 			/>
-			<button
+			<AppBtn
 				onClick={() => handleClick(email, password)}
 			>
 				{title}
-			</button>
-		</form>
+			</AppBtn>
+		</form >
 	)
 }
 

@@ -1,0 +1,10 @@
+@import '../../../App.scss';
+
+.appInput {
+	width: 20rem;
+	margin-bottom: 0.8rem;
+	padding: 0.7rem;
+	border: 1px solid $main;
+	background-color: $light-gray;
+	border-radius: 0.5rem;
+}

@@ -1,0 +1,11 @@
+@import '../../../App.scss';
+
+.appBtn {
+	font-weight: normal;
+	color: #fff;
+	padding: 0.5rem 2rem;
+	background-color: $main;
+	border: none;
+	border-radius: 0.5rem;
+	cursor: pointer;
+}
