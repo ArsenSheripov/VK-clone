@@ -31,6 +31,7 @@ const Form: FC<FormProps> = ({ title, handleClick }) => {
 				placeholder="password"
 			/>
 			<AppBtn
+				type='submit'
 				onClick={() => handleClick(email, password)}
 			>
 				{title}

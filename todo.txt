@@ -2,6 +2,9 @@ ToDo:
 []-Registration
 []-Login
 
+[]-Header
+[]-SideBar
+
 []-Home
 	[]-Posts
 		[]-Add posts

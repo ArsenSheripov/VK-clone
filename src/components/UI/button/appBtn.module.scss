@@ -8,4 +8,25 @@
 	border: none;
 	border-radius: 0.5rem;
 	cursor: pointer;
+	transition: all 0.3s ease;
+
+	&:hover {
+		color: #000;
+		background-color: #fff;
+	}
+}
+
+.appBtnAlt {
+	font-weight: normal;
+	color: $main;
+	padding: 0.5rem 2rem;
+	background-color: #fff;
+	border: none;
+	border-radius: 0.5rem;
+	cursor: pointer;
+	transition: all 0.3s ease;
+
+	&:hover {
+		background-color: $light-gray;
+	}
 }
