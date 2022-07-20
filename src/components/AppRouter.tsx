@@ -2,8 +2,7 @@ import React from 'react'
 import { Route, Routes } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth'
 import HomePage from '../pages/home/HomePage';
-import RegisterPage from '../pages/register/RegisterPage';
-import Register from '../pages/register/RegisterPage';
+import LoginPage from '../pages/login/LoginPage';
 import { privateRoutes, publicRoutes } from '../router/routes';
 
 const AppRouter = () => {
@@ -30,7 +29,7 @@ const AppRouter = () => {
 						key={route.path}
 					/>
 				)}
-				<Route path="*" element={<RegisterPage />} />
+				<Route path="*" element={<LoginPage />} />
 			</Routes>
 	)
 }

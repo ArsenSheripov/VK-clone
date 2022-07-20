@@ -2,6 +2,7 @@
 
 .header {
 	width: 100%;
+	color: #fff;
 	background-color: $main;
 	margin-bottom: 1.2rem;
 	padding: 1rem 0rem;
@@ -10,5 +11,52 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+	}
+
+	&__user {
+		position: relative;
+	}
+
+	&__userAvatar {
+		border-radius: 50%;
+	}
+
+	&__trigger {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		cursor: pointer;
+		padding: 0.5rem;
+		background-color: none;
+		width: 4rem;
+		border: none;
+
+
+		&:hover {
+			background-color: rgba($color: $light-gray, $alpha: 0.6);
+		}
+	}
+
+	&__menu {
+		position: absolute;
+		top: 6rem;
+		left: 0rem;
+		padding: 0.5rem;
+		background-color: red;
+		opacity: 0;
+		transition: all 0.3s ease;
+		pointer-events: none;
+	}
+
+	&__menu_active {
+		position: absolute;
+		top: 4rem;
+		left: 0rem;
+		padding: 0.5rem;
+		background-color: red;
+		opacity: 0;
+		transition: all 0.3s ease;
+		opacity: 1;
+		pointer-events: all;
 	}
 }
