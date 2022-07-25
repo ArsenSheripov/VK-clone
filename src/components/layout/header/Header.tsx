@@ -1,23 +1,25 @@
 import React, { useState } from 'react'
 import { useAppDispatch } from '../../../hooks/reduxHooks'
 import { removeUser } from '../../../store/slices/userSlice'
-import AppBtnAlt from '../../UI/button/AppBtnAlt'
 import cl from './header.module.scss'
 import userAvatar from '../../../assets/user.png';
+import logo from "../../../assets/vk-logo.svg";
+import AppBtn from '../../UI/button/AppBtn'
+import { Link } from 'react-router-dom';
+import { HOME_ROUTE } from '../../../router/consts';
 
 const Header = () => {
 	const dispatch = useAppDispatch()
 	const [menuVisible, setMenuVisible] = useState(false);
 
 	const toggleMenuVisible = () => {
-		// 👇️ passed function to setState
 		setMenuVisible(current => !current);
 	};
 
 	return (
 		<header className={cl.header}>
 			<div className={`${cl.header__container} container`}>
-				<a>Вконтакте</a>
+				<Link to={HOME_ROUTE} className={cl.header__logo}><img src={logo} alt="logo" width={150} /></Link>
 
 				<div>
 					<div
@@ -28,15 +30,15 @@ const Header = () => {
 							onClick={toggleMenuVisible}
 						>
 							<img className={cl.header__userAvatar} src={userAvatar} width={40} height={40} />
-							<span>&#8744;</span>
+							<span><i className={menuVisible ? "arrow up" : "arrow down"}></i></span>
 						</button>
 						<div className={menuVisible ? cl.header__menu_active : cl.header__menu}>
 							<p className={cl.header__userName}>Abdullah</p>
-							<AppBtnAlt
+							<AppBtn
 								onClick={() => dispatch(removeUser())}
 							>
 								Выйти
-							</AppBtnAlt>
+							</AppBtn>
 						</div>
 					</div>
 				</div>

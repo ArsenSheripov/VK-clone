@@ -1,8 +1,13 @@
 $main: #0077FF;
 $light-gray: #EDEEF0;
 $gray-blue: #99A2AD;
+$white: #ffffff;
+$black: #000;
+$green: #4fb14f;
+$gray-tranceparent: rgba(200, 200, 200, 0.307);
 
 body {
+	font-family: 'Ubuntu', sans-serif;
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
@@ -25,4 +30,33 @@ body {
 	clip-path: inset(100%);
 	clip: rect(0 0 0 0);
 	overflow: hidden;
+}
+
+.arrow {
+	border: solid black;
+	border-width: 0 2px 2px 0;
+	display: inline-block;
+	padding: 0.2rem;
+	transition: all 0.3s ease;
+
+}
+
+.right {
+	transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+}
+
+.left {
+	transform: rotate(135deg);
+	-webkit-transform: rotate(135deg);
+}
+
+.up {
+	transform: rotate(-135deg);
+	-webkit-transform: rotate(-135deg);
+}
+
+.down {
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
 }
