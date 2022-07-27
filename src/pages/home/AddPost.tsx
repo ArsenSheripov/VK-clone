@@ -4,6 +4,7 @@ import AppInput from '../../components/UI/input/AppInput';
 import { IPost } from '../../types/IPost';
 import { TypeSetState } from '../../types/TypeSetState';
 import { IUser } from "../../types/IUser";
+import cl from './home.module.scss';
 
 interface IAddPost {
 	setPosts: TypeSetState<IPost[]>
@@ -13,10 +14,10 @@ interface IAddPost {
 const AddPost: FC<IAddPost> = ({ setPosts }) => {
 	const [content, setContent] = useState('')
 
-	const users = [{
-		id: 1,
-		avatar: 'avatar',
-		name: 'name',
+	const users: IUser[] = [{
+		id: '1',
+		avatar: 'avatar1',
+		name: 'ramazan',
 		isInNetwork: true
 	}];
 	const addPostHandler = () => {
@@ -30,13 +31,15 @@ const AddPost: FC<IAddPost> = ({ setPosts }) => {
 	}
 
 	return (
-		<div>
+		<div className={cl.home__addPost}>
 			<AppInput
 				type='text'
 				value={content}
 				onChange={e => setContent(e.target.value)}
 			/>
-			<AppBtn onClick={() => addPostHandler()} />
+			<AppBtn onClick={() => addPostHandler()}>
+				Создать
+			</AppBtn>
 		</div>
 	)
 }

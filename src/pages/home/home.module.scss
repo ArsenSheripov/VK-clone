@@ -1,0 +1,42 @@
+@import '../../App.scss';
+
+.home {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 80%;
+
+	&__addPost {
+		margin-bottom: 2rem;
+
+		input {
+			width: 30rem;
+		}
+	}
+
+	&__postList {}
+
+	&__postItem {
+		max-width: 40rem;
+	}
+
+	&__avatar {
+		width: 3rem;
+		height: 3rem;
+		border-radius: 50%;
+	}
+
+	&__authorName {}
+
+	&__createdAt {}
+
+	&__postImages {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+	}
+
+	&__img {
+		margin: 0;
+	}
+}

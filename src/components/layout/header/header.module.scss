@@ -27,6 +27,10 @@
 		border-radius: 50%;
 	}
 
+	&__userName {
+		margin-bottom: 0.8rem;
+	}
+
 	&__trigger {
 		display: flex;
 		justify-content: space-between;
@@ -48,7 +52,7 @@
 		position: absolute;
 		top: 6rem;
 		left: 0rem;
-		padding: 0.5rem;
+		padding: 1rem;
 		background-color: $gray-blue;
 		opacity: 0;
 		transition: all 0.3s ease;
@@ -60,7 +64,7 @@
 		position: absolute;
 		top: 4rem;
 		left: 0rem;
-		padding: 0.5rem;
+		padding: 1rem;
 		background-color: $white;
 		opacity: 0;
 		transition: all 0.3s ease;
