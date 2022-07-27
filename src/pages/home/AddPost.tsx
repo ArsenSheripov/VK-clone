@@ -5,6 +5,7 @@ import { IPost } from '../../types/IPost';
 import { TypeSetState } from '../../types/TypeSetState';
 import { IUser } from "../../types/IUser";
 import cl from './home.module.scss';
+import defaultAvatar from '../../assets/defaultAvatar.jpg';
 
 interface IAddPost {
 	setPosts: TypeSetState<IPost[]>
@@ -16,8 +17,8 @@ const AddPost: FC<IAddPost> = ({ setPosts }) => {
 
 	const users: IUser[] = [{
 		id: '1',
-		avatar: 'avatar1',
-		name: 'ramazan',
+		avatar: defaultAvatar,
+		name: 'user name',
 		isInNetwork: true
 	}];
 	const addPostHandler = () => {

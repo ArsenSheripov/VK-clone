@@ -16,9 +16,9 @@ const HomePage = () => {
 				avatar: 'https://i.pinimg.com/280x280_RS/aa/87/f3/aa87f3803af1bac5365d7935b4ed74f4.jpg',
 				name: 'National Geographic',
 			},
-			content: 'Серебрянная осень в сибири',
+			content: 'Afrika',
 			createdAt: '15 минут назад',
-			images: [kit, orel, leo, ptiz]
+			images: [ptiz, leo, kit, orel]
 		}
 	])
 
