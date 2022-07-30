@@ -1,0 +1,17 @@
+@import '../../App.scss';
+
+.myPage {
+	display: flex;
+	width: 80%;
+	align-items: center;
+	flex-direction: column;
+
+	&__avatar {
+		border-radius: 50%;
+		margin-bottom: 3rem;
+	}
+
+	&__email {
+		font-size: 2.5rem;
+	}
+}
