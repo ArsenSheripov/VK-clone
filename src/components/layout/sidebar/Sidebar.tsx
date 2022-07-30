@@ -17,6 +17,7 @@ const Sidebar = () => {
 				<Link
 					to={page.path}
 					className={cl.sidebar__item}
+					key={page.path}
 				>
 					{page.pageName}
 				</Link>

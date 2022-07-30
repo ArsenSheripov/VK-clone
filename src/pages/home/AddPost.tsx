@@ -11,27 +11,18 @@ import { db } from '../../firebase';
 import { addDoc, collection } from 'firebase/firestore';
 
 
-interface IAddPost {
-	setPosts: TypeSetState<IPost[]>
-}
 
 
-const AddPost: FC<IAddPost> = ({ setPosts }) => {
+const AddPost: FC = () => {
 	const [content, setContent] = useState('')
 	const user = useAppSelector(state => state.user)
-
-	const users: IUser[] = [{
-		id: '1',
-		avatar: defaultAvatar,
-		name: 'user name',
-		isInNetwork: true
-	}];
 
 	const addPostHandler = async () => {
 		try {
 			const docRef = await addDoc(collection(db, "posts"), {
-				author: users[0],
-				content
+				author: user,
+				content,
+				createdAt: '10 min nazad',
 			});
 			console.log("Document written with ID: ", docRef.id);
 		} catch (e) {

@@ -1,6 +1,6 @@
 export interface IUser {
 	id: string
-	avatar: string
-	name: string
+	avatar?: string
+	email: string
 	isInNetwork?: boolean
 }

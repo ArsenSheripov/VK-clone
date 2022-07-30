@@ -14,7 +14,7 @@ const FriendItem: FC<FriendItemProps> = ({ friend }) => {
 				<img src={friend.avatar} alt="avatar" />
 				{friend.isInNetwork ? <span className={cl.friends__network}></span> : false}
 			</div>
-			<span className={cl.friends__name}>{friend.name}</span>
+			<span className={cl.friends__name}>{friend.email}</span>
 		</div>
 	)
 }

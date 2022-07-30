@@ -19,7 +19,7 @@ const PostItem: FC<PostItemProps> = ({ post }) => {
 					<span
 						className={cl.home__authorName}
 					>
-						{post.author.name}
+						{post.author.email}
 					</span>
 					<span
 						className={cl.home__createdAt}
