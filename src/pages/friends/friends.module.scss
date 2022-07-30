@@ -1,0 +1,46 @@
+@import '../../App.scss';
+
+.friends {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 80%;
+
+	&__item {
+		background-color: $white;
+		display: flex;
+		align-items: center;
+		width: 30rem;
+		padding: 1rem;
+		margin-bottom: 1rem;
+		border-radius: 0.3rem;
+	}
+
+	&__avatar {
+		position: relative;
+		margin-right: 2rem;
+
+		img {
+			width: 5rem;
+			height: 5rem;
+			border-radius: 50%;
+		}
+	}
+
+	&__network {
+		position: absolute;
+		box-sizing: content-box;
+		right: 0.2rem;
+		bottom: 0.1rem;
+		width: 1rem;
+		height: 1rem;
+		border: 0.3rem solid $white;
+		border-radius: 50%;
+		background-color: $green;
+	}
+
+	&__name {
+		font-size: 2rem;
+		font-weight: normal;
+	}
+}

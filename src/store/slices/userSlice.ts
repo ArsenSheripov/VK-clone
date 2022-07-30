@@ -1,8 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit"
+import defaultAvatar from '../../assets/defaultAvatar.jpg';
 
 const initialState = {
 	email: null,
 	token: null,
+	name: null,
+	avatar: defaultAvatar,
 	id: null,
 }
 
@@ -13,6 +16,7 @@ const userSlice = createSlice({
 		setUser(state, action) {
 			state.email = action.payload.email;
 			state.token = action.payload.token;
+			state.name = action.payload.name;
 			state.id = action.payload.id;
 		},
 		removeUser(state) {

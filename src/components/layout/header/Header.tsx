@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useAppDispatch } from '../../../hooks/reduxHooks'
+import { useAppDispatch, useAppSelector } from '../../../hooks/reduxHooks'
 import { removeUser } from '../../../store/slices/userSlice'
 import cl from './header.module.scss'
 import userAvatar from '../../../assets/user.png';
@@ -9,8 +9,10 @@ import { Link } from 'react-router-dom';
 import { HOME_ROUTE } from '../../../router/consts';
 
 const Header = () => {
-	const dispatch = useAppDispatch()
+	const dispatch = useAppDispatch();
+	const user = useAppSelector(state => state.user)
 	const [menuVisible, setMenuVisible] = useState(false);
+
 
 	const toggleMenuVisible = () => {
 		setMenuVisible(current => !current);
@@ -33,7 +35,7 @@ const Header = () => {
 							<span><i className={menuVisible ? "arrow up" : "arrow down"}></i></span>
 						</button>
 						<div className={menuVisible ? cl.header__menu_active : cl.header__menu}>
-							<p className={cl.header__userName}>Abdullah</p>
+							<p className={cl.header__userName}>{user.email}</p>
 							<AppBtn
 								onClick={() => dispatch(removeUser())}
 							>

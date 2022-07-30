@@ -6,6 +6,10 @@ import { TypeSetState } from '../../types/TypeSetState';
 import { IUser } from "../../types/IUser";
 import cl from './home.module.scss';
 import defaultAvatar from '../../assets/defaultAvatar.jpg';
+import { useAppSelector } from '../../hooks/reduxHooks';
+import { db } from '../../firebase';
+import { addDoc, collection } from 'firebase/firestore';
+
 
 interface IAddPost {
 	setPosts: TypeSetState<IPost[]>
@@ -14,6 +18,7 @@ interface IAddPost {
 
 const AddPost: FC<IAddPost> = ({ setPosts }) => {
 	const [content, setContent] = useState('')
+	const user = useAppSelector(state => state.user)
 
 	const users: IUser[] = [{
 		id: '1',
@@ -21,14 +26,17 @@ const AddPost: FC<IAddPost> = ({ setPosts }) => {
 		name: 'user name',
 		isInNetwork: true
 	}];
-	const addPostHandler = () => {
-		setPosts(prev => [...prev, {
-			author: users[0],
-			content,
-			createdAt: '5 minuts ago',
-		},
-		])
 
+	const addPostHandler = async () => {
+		try {
+			const docRef = await addDoc(collection(db, "posts"), {
+				author: users[0],
+				content
+			});
+			console.log("Document written with ID: ", docRef.id);
+		} catch (e) {
+			console.error("Error adding document: ", e);
+		}
 	}
 
 	return (
