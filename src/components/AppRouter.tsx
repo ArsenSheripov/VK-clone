@@ -4,9 +4,20 @@ import { useAuth } from '../hooks/useAuth'
 import HomePage from '../pages/home/HomePage';
 import LoginPage from '../pages/login/LoginPage';
 import { privateRoutes, publicRoutes } from '../router/routes';
+import { useAuthState } from "react-firebase-hooks/auth";
+import { getAuth } from 'firebase/auth';
+import Loader from '../components/loader/Loader';
 
 const AppRouter = () => {
+	const auth = getAuth()
 	const { isAuth, email } = useAuth();
+	const [user, loading, error] = useAuthState(auth)
+
+	if (loading) {
+		console.log('loading');
+		return (<Loader />)
+	}
+
 	return (
 		isAuth
 			?

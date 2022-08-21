@@ -1,6 +1,10 @@
+@import '../../App.scss';
+
 .loader {
 	display: flex;
 	justify-content: center;
+	align-items: center;
+	width: 80%;
 }
 
 .ldsRoller {
@@ -22,7 +26,7 @@
 	width: 7px;
 	height: 7px;
 	border-radius: 50%;
-	background: #fff;
+	background: $dark-blue;
 	margin: -4px 0 0 -4px;
 }
 

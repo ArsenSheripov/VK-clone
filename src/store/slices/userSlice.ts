@@ -4,8 +4,9 @@ import defaultAvatar from '../../assets/defaultAvatar.jpg';
 const initialState = {
 	email: null,
 	token: null,
-	avatar: defaultAvatar,
+	photoURL: defaultAvatar,
 	id: null,
+	name: 'usernamee'
 }
 
 const userSlice = createSlice({
@@ -17,6 +18,12 @@ const userSlice = createSlice({
 			state.token = action.payload.token;
 			state.id = action.payload.id;
 		},
+		setUserPhoto(state, action) {
+			state.photoURL = action.payload.photoURL
+		},
+		setUserName(state, action) {
+			state.name = action.payload.name
+		},
 		removeUser(state) {
 			state.email = null;
 			state.token = null;
@@ -25,6 +32,6 @@ const userSlice = createSlice({
 	},
 })
 
-export const { setUser, removeUser } = userSlice.actions;
+export const { setUser, setUserPhoto, setUserName, removeUser } = userSlice.actions;
 
 export default userSlice.reducer;

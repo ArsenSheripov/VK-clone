@@ -1,28 +1,28 @@
 import React, { FC, useState } from 'react';
 import AppBtn from '../../components/UI/button/AppBtn';
 import AppInput from '../../components/UI/input/AppInput';
-import { IPost } from '../../types/IPost';
-import { TypeSetState } from '../../types/TypeSetState';
-import { IUser } from "../../types/IUser";
 import cl from './home.module.scss';
-import defaultAvatar from '../../assets/defaultAvatar.jpg';
 import { useAppSelector } from '../../hooks/reduxHooks';
 import { db } from '../../firebase';
 import { addDoc, collection } from 'firebase/firestore';
-
+import firebase from 'firebase/compat/app';
+import { useCollectionData } from 'react-firebase-hooks/firestore';
 
 
 
 const AddPost: FC = () => {
 	const [content, setContent] = useState('')
 	const user = useAppSelector(state => state.user)
+	const [posts, loading] = useCollectionData(
+		firestore.collection('posts').orderBy('createdAt')
+	)
 
 	const addPostHandler = async () => {
 		try {
 			const docRef = await addDoc(collection(db, "posts"), {
 				author: user,
 				content,
-				createdAt: '10 min nazad',
+				createdAt: firebase.firestore.FieldValue.serverTimestamp(),
 			});
 			console.log("Document written with ID: ", docRef.id);
 		} catch (e) {

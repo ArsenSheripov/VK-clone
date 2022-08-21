@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useAppDispatch, useAppSelector } from '../../../hooks/reduxHooks'
 import { removeUser } from '../../../store/slices/userSlice'
 import cl from './header.module.scss'
-import userAvatar from '../../../assets/user.png';
+import defaultAvatar from '../../../assets/defaultAvatar.jpg';
 import logo from "../../../assets/vk-logo.svg";
 import AppBtn from '../../UI/button/AppBtn'
 import { Link } from 'react-router-dom';
@@ -31,7 +31,7 @@ const Header = () => {
 							className={cl.header__trigger}
 							onClick={toggleMenuVisible}
 						>
-							<img className={cl.header__userAvatar} src={userAvatar} width={40} height={40} />
+							<img className={cl.header__userAvatar} src={user.photoURL ? user.photoURL : defaultAvatar} width={40} height={40} />
 							<span><i className={menuVisible ? "arrow up" : "arrow down"}></i></span>
 						</button>
 						<div className={menuVisible ? cl.header__menu_active : cl.header__menu}>

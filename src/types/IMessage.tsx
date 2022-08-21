@@ -1,6 +1,6 @@
 import { IUser } from "./IUser";
 
-interface IMessage {
+export interface IMessage {
 	user: IUser
 	message: string
 }
